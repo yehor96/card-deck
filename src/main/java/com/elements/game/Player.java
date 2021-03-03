@@ -4,8 +4,7 @@ import com.elements.cards.PlayerHand;
 
 public class Player {
 
-    private PlayerHand cards;
-
+    private PlayerHand playerHand;
     private String name;
 
     public Player(String name) {
@@ -18,6 +17,6 @@ public class Player {
     }
 
     public void getHand(PlayerHand hand) {
-        cards = hand;
+        playerHand = hand;
     }
 }

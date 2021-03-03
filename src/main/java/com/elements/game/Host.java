@@ -11,13 +11,16 @@ public class Host {
 
     public void prepareCards() {
         deck = new Deck();
+        playerHand1 = new PlayerHand();
+        playerHand2 = new PlayerHand();
         deck.shuffle();
-        playerHand1.addCards(deck.getHalf(true));
-        playerHand2.addCards(deck.getHalf(false));
+        playerHand1.setUp(deck.getHalf(true));
+        playerHand2.setUp(deck.getHalf(false));
     }
 
-    public void providePlayerHand(Player player) {
-        player.getHand(playerHand1);
+    public void provideHandToPlayers(Player player1, Player player2) {
+        player1.getHand(playerHand1);
+        player2.getHand(playerHand2);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.elements.cards;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class PlayerHand {
@@ -10,7 +11,8 @@ public class PlayerHand {
         return cards;
     }
 
-    public void addCards(List<Card> hand) {
+    public void setUp(List<Card> hand) {
+        cards = new LinkedList<>();
         cards.addAll(hand);
     }
 
