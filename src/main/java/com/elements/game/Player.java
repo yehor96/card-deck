@@ -1,17 +1,15 @@
 package com.elements.game;
 
-import com.elements.cards.Card;
-import com.elements.cards.Deck;
+import com.elements.cards.PlayerHand;
 
 public class Player {
 
-    private Deck cards;
+    private PlayerHand cards;
 
     private String name;
 
     public Player(String name) {
         this.name = name;
-        cards = new Deck();
     }
 
     @Override
@@ -19,23 +17,7 @@ public class Player {
         return name;
     }
 
-    public Card drawCard() {
-        return cards.pop();
-    }
-
-    public void takeCards(Card... newCards) {
-        cards.add(newCards);
-    }
-
-    public boolean hasCards() {
-        return cards.getDeckSize() > 0;
-    }
-
-    public int getNumberOfCardOnHand() {
-        return cards.getDeckSize();
-    }
-
-    public void shuffleOwnCards() {
-        cards.shuffle();
+    public void getHand(PlayerHand hand) {
+        cards = hand;
     }
 }

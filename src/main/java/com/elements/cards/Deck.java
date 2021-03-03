@@ -15,22 +15,15 @@ public class Deck {
         cards = createDefaultDeck();
     }
 
-    public void add(Card... newCards) {
-        for (var each : newCards) {
-            cards.add(cards.size(), each);
-        }
-    }
-
-    public Card pop() {
-        return cards.remove(0);
+    public List<Card> getHalf(boolean first) {
+        var firstItemOfSecondHalf = cards.size()/2+1;
+        return first
+                ? cards.subList(0, firstItemOfSecondHalf)
+                : cards.subList(firstItemOfSecondHalf, cards.size());
     }
 
     public void shuffle() {
         Collections.shuffle(cards);
-    }
-
-    public int getDeckSize() {
-        return cards.size();
     }
 
     private static List<Card> createDefaultDeck() {
