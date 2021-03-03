@@ -34,17 +34,9 @@ public class Deck {
     }
 
     private List<Card> createSuit(Suit suit) {
-        return new LinkedList<>(Arrays.asList(
-                new Card(SIX, suit),
-                new Card(SEVEN, suit),
-                new Card(EIGHT, suit),
-                new Card(NINE, suit),
-                new Card(TEN, suit),
-                new Card(VALET, suit),
-                new Card(QUEEN, suit),
-                new Card(KING, suit),
-                new Card(ACE, suit)
-        ));
+        List<Card> cards = new LinkedList<>();
+        Stream.of(CardType.values()).forEach(type -> cards.add(new Card(type, suit)));
+        return cards;
     }
 
 }
