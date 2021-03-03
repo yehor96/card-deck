@@ -1,12 +1,13 @@
 package com.elements.cards;
 
-import java.util.Arrays;
+import com.elements.enums.CardType;
+import com.elements.enums.Half;
+import com.elements.enums.Suit;
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
-
-import static com.elements.cards.CardType.*;
 
 public class Deck {
 
@@ -16,11 +17,17 @@ public class Deck {
         cards = createDeck();
     }
 
-    public List<Card> getHalf(boolean isFirstHalf) {
-        var half = cards.size() / 2;
-        return isFirstHalf
-                ? cards.subList(0, half)
-                : cards.subList(half, cards.size());
+    public List<Card> getHalf(Half half) {
+        var mid = cards.size() / 2;
+        switch (half) {
+            case FIRST:
+                return cards.subList(0, mid);
+            case SECOND:
+                return cards.subList(mid, cards.size());
+            default:
+                throw new IllegalArgumentException(
+                        "Should provide either first or second half. " + half + " is unknown");
+        }
     }
 
     public void shuffle() {

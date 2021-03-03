@@ -2,6 +2,7 @@ package com.elements.game;
 
 import com.elements.cards.Deck;
 import com.elements.cards.PlayerHand;
+import com.elements.enums.Half;
 
 public class Host {
 
@@ -11,11 +12,9 @@ public class Host {
 
     public void prepareCards() {
         deck = new Deck();
-        playerHand1 = new PlayerHand();
-        playerHand2 = new PlayerHand();
         deck.shuffle();
-        playerHand1.setUp(deck.getHalf(true));
-        playerHand2.setUp(deck.getHalf(false));
+        playerHand1 = new PlayerHand(deck.getHalf(Half.FIRST));
+        playerHand2 = new PlayerHand(deck.getHalf(Half.SECOND));
     }
 
     public void provideHandToPlayers(Player player1, Player player2) {

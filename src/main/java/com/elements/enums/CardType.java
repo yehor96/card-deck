@@ -1,4 +1,4 @@
-package com.elements.cards;
+package com.elements.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

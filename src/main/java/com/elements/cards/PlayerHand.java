@@ -7,13 +7,13 @@ public class PlayerHand {
 
     private List<Card> cards;
 
-    public List<Card> getCards() {
-        return cards;
-    }
-
-    public void setUp(List<Card> hand) {
+    public PlayerHand(List<Card> hand) {
         cards = new LinkedList<>();
         cards.addAll(hand);
+    }
+
+    public List<Card> getCards() {
+        return cards;
     }
 
 }

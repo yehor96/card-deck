@@ -1,5 +1,8 @@
 package com.elements.cards;
 
+import com.elements.enums.CardType;
+import com.elements.enums.Suit;
+
 public class Card implements Comparable<Card> {
 
     private final String name;
